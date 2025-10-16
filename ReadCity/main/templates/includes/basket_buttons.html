@@ -1,0 +1,38 @@
+{% load static %}
+{% load i18n %}
+
+<div class="buttons row" style="--bs-gutter-x: 0;" id="book-button-{{ book.id_book }}">
+    {% if book in basket_books %}
+        <button type="submit"   hx-target="#book-button-{{ book.id_book }}"
+                class="btn btn-left col-8 button-fav-basket btn-click"
+                hx-swap="beforeend"
+                hx-post="{% url 'basket_delete' book.id_book %}">
+            {% trans "Удалить с корзины" %}
+        </button>
+    {% else %}
+        <button type="submit" hx-target="#book-button-{{ book.id_book }}"
+                class="btn btn-left col-8 button-fav-no-basket btn-click"
+                hx-swap="beforeend"
+                hx-post="{% url 'basket_add' book.id_book %}">
+            {% trans "Купить" %}
+        </button>
+    {% endif %}
+
+    {% if book in bookmarks %}
+        <button type="submit"
+                hx-target="#book-button-{{ book.id_book }}"
+                hx-swap="beforeend"
+                hx-post="{% url 'delete_bookmark' book.id_book %}"
+                class="btn btn-right col-1 button-fav-bookmarks btn-click">
+            <i class="bi bi-bookmarks"></i>
+        </button>
+    {% else %}
+        <button type="submit"
+                hx-target="#book-button-{{ book.id_book }}"
+                hx-swap="beforeend"
+                hx-post="{% url 'add_bookmark' book.id_book %}"
+                class="btn btn-right col-1 button-fav-no-bookmarks btn-click">
+            <i class="bi bi-bookmarks"></i>
+        </button>
+    {% endif %}
+</div>

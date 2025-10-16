@@ -1,0 +1,88 @@
+.menu-bookmarks-div{
+    display: flex;
+    flex-direction: column;
+
+    align-content: space-around;
+
+    border: 2px solid #E1E1E1;
+    width: 30%;
+    height:100%;
+    border-radius: 5px;
+
+
+}
+
+.menu-bookmarks-a{
+    margin: 1vw 1vw;
+    font-size:1.8vw;
+    transition: color .1s linear;
+}
+
+.menu-bookmarks-a:hover{
+    color:rgb(29, 150, 201);
+    transition: color .1s linear;
+
+}
+.bookmarks-header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 2.5rem;
+
+}
+.bookmarks-products{
+    width: 100%;
+    padding: 0 4vw;
+}
+
+.bookmarks-header a, .bookmarks-header span, .bookmarks-header h1 {
+    display: flex; align-items: center;
+}
+.bookmarks-header a{
+    color:rgb(38, 169, 224)
+}
+.bookmarks-header span{
+    margin-left: 1vw;
+    color:rgb(112, 119, 131)
+}
+
+.bookmarks-header-2 a{
+    padding-bottom: 1vw;
+}
+.bookmarks-header-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-top: 2vw;
+}
+
+.active-a{
+    border-bottom: 2px solid rgb(38, 169, 224);
+    border-radius: 1px;
+    font-weight: 500;
+}
+.not-active-a{
+    color:rgb(112, 119, 131)
+}
+.menu-bookmarks-div i{
+    width: 2vw;
+}
+.books-cards{
+    width: 100%;
+    padding:0;
+}
+.a-image-book{
+    height:20vw;}
+.h-books{
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.book-card{
+    margin-top: 2vw;
+    padding:0;
+}
+
+.books-cards{
+    padding:0;
+    }

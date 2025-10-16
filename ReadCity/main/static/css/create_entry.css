@@ -1,0 +1,78 @@
+form{
+    display: block;
+
+    margin:auto;
+}
+.form-create-entry{
+    margin-top:5vw;
+    padding-left:10vw;
+    padding-right:10vw;
+    display:flex;
+    justify-content:space-between;
+}
+
+.field-form{
+    margin-top:1vw;
+    margin-bottom:1vw;
+}
+#upload-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 150px;
+	height: 150px;
+    margin-top:1vw;
+    font-size:0.8vw;
+	outline: 2px dashed #5d5d5d;
+	outline-offset: -12px;
+	background-color: #e0f2f7;
+	font-family: 'Segoe UI';
+	color: #1f3c44;
+}
+
+#upload-container img {
+	width: 40%;
+	margin-bottom: 5px;
+	user-select: none;
+}
+
+#upload-container label {
+	font-weight: bold;
+
+}
+
+#upload-container label:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#upload-container div {
+	position: relative;
+	z-index: 10;
+}
+
+#upload-container input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	position: absolute;
+	z-index: -10;
+}
+
+#upload-container label.focus {
+	outline: 1px solid #0078d7;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#upload-container.dragover {
+	background-color: #fafafa;
+	outline-offset: -17px;
+}
+
+.btn-save{
+    background-color: #26a9e0;
+    width: 8vw;
+	color:white;
+    height:2.5vw;
+}

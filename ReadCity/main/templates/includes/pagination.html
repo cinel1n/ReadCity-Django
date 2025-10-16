@@ -1,0 +1,39 @@
+    {% if page_obj.paginator.num_pages > 1 %}
+
+    <div class="pog Indent">
+
+        {% if page_obj.has_previous %}
+
+            <a href="?page=1" class="a-page">
+                <span>1</span>
+            </a>
+            {% if page_obj.previous_page_number != 1 %}
+            <a class="a-page" href="?page={{ page_obj.previous_page_number}}">
+                <span>{{ page_obj.previous_page_number  }}</span>
+            </a>
+            {% endif %}
+
+        {% endif %}
+
+        <a href="?page={{page_obj.number}}" class="pag-act a-page">
+            <span>{{page_obj.number}}</span>
+        </a>
+
+
+
+        {% if page_obj.has_next %}
+
+            <a href="?page={{ page_obj.next_page_number }}" class="a-page">
+                <span>{{page_obj.next_page_number}}</span>
+                </a>
+
+
+
+            {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="a-page">
+                <span>{{page_obj.paginator.num_pages}}</span>
+                </a>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% endif %}

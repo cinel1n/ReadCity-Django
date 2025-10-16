@@ -1,0 +1,38 @@
+
+
+.form-login {
+    margin: auto;
+    width: 30%;
+    padding:1vw;
+    margin-top: 7vw;
+    border-radius: 5px;
+    border:2px solid #E1E1E1;
+    background-color:white;
+    margin-bottom:7vw;
+
+}
+
+.btn-login{
+    width: 30%;
+    height: 2vw;
+    background-color:#26a9e0;
+    border:0;
+    display:flex;
+    justify-align:center;
+}
+
+.reg-btn{
+    margin-left:2vw;
+    display:flex;
+    align-content: center;
+     }
+.btns-login{
+    display:flex;
+    justify-content:space-between;
+}
+
+.form-check-input{
+    margin-left:0}
+
+.form-check{
+    padding-left:0;}

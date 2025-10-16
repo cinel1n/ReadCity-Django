@@ -1,0 +1,4 @@
+Добавление данных в бд
+docker cp read_city_data.sql read-city-db-1:/tmp/
+docker compose exec db psql -U postgres -d readcityapp -f /tmp/read_city_data.sql
+

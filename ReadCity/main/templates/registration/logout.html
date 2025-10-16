@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    {% load static %}
+
+    {% include 'includes/settings.html' %}
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+
+</head>
+
+<body>
+    {% include 'includes/menu.html' %}
+
+
+    <form class="form-login" method="post">
+        {% csrf_token %}
+
+        {{ form }}
+        <div class="mb-3">
+            <label for="Tel" class="form-label">Номер телефона</label>
+            <input type="tel" class="form-control" id="Tel" >
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+        <button type="submit" class="btn btn-login btn-primary">Войти</button>
+
+    </form>
+    {% include 'includes/footer.html' %}
+
+</body>

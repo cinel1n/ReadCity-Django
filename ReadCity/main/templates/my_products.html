@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Мои товары</title>
+    {% load static %}
+    {% load i18n %}
+    {% include 'includes/settings.html' %}
+    <link rel="stylesheet" href="{% static 'css/my_products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/library.css' %}">
+</head>
+<body  id="main-book" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' >
+    {% include 'includes/menu.html' %}
+
+    <div class="d-flex Indent" style="margin-top: 3.5vw;">
+
+        <div class="bookmarks-products">
+            <div class="bookmarks-header">
+
+                <div class="d-flex">
+                    <h1>Мои товары</h1>
+                    <span>{{num_books}}</span>
+                </div>
+
+            </div>
+
+            <div class="books-container container-fluid">
+
+                <div class="row books-cards">
+                    {% for book in object_list %}
+                    <div class="card col col-xl-2 col-lg-3 col-md-6 col-12 book-card">
+                        {% include 'includes/books.html' %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% include 'includes/pagination.html' %}
+
+    {% include 'includes/footer.html' %}
+
+
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</body>
+</html>

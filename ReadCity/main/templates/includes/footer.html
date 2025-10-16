@@ -1,0 +1,133 @@
+{% load cache %}
+{% cache 600 footer %}
+
+
+{% load i18n %}
+{% load static %}
+<footer>
+        <div class="row footer-top">
+            <div class="card col-xl-6 col-md-12">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {% trans "Книжный интернет-магазин «Читай-город»" %}
+
+                    </h5>
+                    <p class="card-text text-secondary">
+                        {% trans "«Читай-город» – сеть книжных магазинов, успешно работающих в Москве и других регионах России." %}
+                    </p>
+                    <p class="card-text text-secondary">
+                        {% trans "А ещё это – крупный интернет-магазин книг. В нём вы можете заказывать книги в любое время 24 часа в сутки."%}
+                        </p>
+                    <div class="footer-top-link ">
+                        <a href="https://vk.com/chitaigorod" class="text-secondary"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.576 7.738c.134-.416 0-.72-.59-.72h-1.964c-.496 0-.724.266-.858.55 0 0-1.01 2.422-2.421 3.993-.457.454-.667.606-.915.606-.133 0-.305-.152-.305-.568v-3.88c0-.492-.152-.719-.572-.719H9.863c-.305 0-.496.227-.496.454 0 .473.705.587.782 1.912v2.877c0 .624-.115.738-.362.738-.668 0-2.288-2.442-3.26-5.224C6.337 7.208 6.145 7 5.65 7H3.667C3.095 7 3 7.265 3 7.549c0 .51.667 3.085 3.107 6.491 1.62 2.328 3.927 3.577 6.005 3.577 1.258 0 1.411-.283 1.411-.757V15.1c0-.567.114-.662.515-.662.286 0 .8.151 1.963 1.268 1.335 1.325 1.563 1.93 2.307 1.93h1.963c.572 0 .84-.284.687-.832-.172-.55-.82-1.344-1.659-2.29-.457-.53-1.144-1.117-1.353-1.4-.286-.38-.21-.53 0-.872-.02 0 2.383-3.368 2.63-4.504z"></path></svg></a>
+                        <a href="https://ok.ru/chitaigorod" ><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.508 12.658c.65-.401 1.507-.21 1.915.428a1.345 1.345 0 01-.436 1.876 8.964 8.964 0 01-2.752 1.118l2.65 2.597a1.34 1.34 0 010 1.924 1.407 1.407 0 01-1.963 0l-2.604-2.552-2.603 2.552a1.4 1.4 0 01-.982.399 1.4 1.4 0 01-.981-.399 1.342 1.342 0 010-1.924L10.4 16.08a8.98 8.98 0 01-2.751-1.118 1.345 1.345 0 01-.435-1.876 1.403 1.403 0 011.914-.428 6.12 6.12 0 006.38 0zM12.318 3c2.614 0 4.74 2.084 4.74 4.646 0 2.561-2.126 4.644-4.74 4.644-2.613 0-4.739-2.083-4.739-4.644C7.579 5.084 9.705 3 12.319 3zm0 2.723c-1.081 0-1.962.862-1.962 1.923 0 1.06.881 1.923 1.962 1.923 1.082 0 1.963-.863 1.963-1.923s-.88-1.923-1.963-1.923z"></path></svg></a>
+                        <a href="https://www.youtube.com/channel/UCbsqXVnwSqer9QttshVs76A" target="_blank" class="social__link"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social__icon"><path d="M19.043 6.386a2.255 2.255 0 011.586 1.586c.386 1.409.37 4.344.37 4.344s0 2.921-.37 4.33a2.255 2.255 0 01-1.586 1.586c-1.409.37-7.043.37-7.043.37s-5.62 0-7.043-.385a2.255 2.255 0 01-1.586-1.586C3 15.237 3 12.3 3 12.3s0-2.92.37-4.329a2.302 2.302 0 011.587-1.601C6.366 6 12 6 12 6s5.634 0 7.043.386zm-8.837 3.218V15l4.685-2.699-4.685-2.698z"></path></svg></a>
+                        <a href="https://www.tiktok.com/@chitai_gorod" target="_blank" class="social__link"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social__icon"><path d="M19.002 8.136a4.401 4.401 0 01-2.6-.84 4.164 4.164 0 01-1.636-2.514A4.01 4.01 0 0114.682 4h-2.79v7.37l-.003 4.037c0 1.079-.729 1.993-1.734 2.316a2.597 2.597 0 01-2.092-.223 2.423 2.423 0 01-1.233-2.058c-.02-1.364 1.12-2.478 2.53-2.478.277 0 .544.045.795.122V10.353a5.519 5.519 0 00-.806-.058c-1.543 0-2.987.62-4.02 1.738a4.988 4.988 0 00-1.319 3.054c-.093 1.483.468 2.895 1.557 3.935.16.152.328.294.505.427a5.465 5.465 0 003.277 1.073c.271 0 .542-.02.806-.059a5.407 5.407 0 002.977-1.44 4.968 4.968 0 001.567-3.594l-.014-6.03a7.236 7.236 0 004.324 1.419V8.133c.003.003-.007.003-.007.003z"></path></svg></a>
+                        <a href="https://t.me/chitai_gorod_official" target="_blank" class="social__link"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.237 11.422c4.832-2.105 8.054-3.493 9.666-4.164 4.603-1.914 5.56-2.247 6.183-2.258.137-.002.444.032.642.193.168.136.214.32.236.449.022.129.05.423.028.652-.25 2.621-1.329 8.981-1.878 11.916-.232 1.242-.69 1.659-1.133 1.7-.962.088-1.693-.636-2.625-1.247-1.459-.957-2.283-1.552-3.7-2.485-1.636-1.079-.575-1.671.358-2.64.244-.253 4.485-4.11 4.567-4.46.01-.044.02-.208-.077-.294s-.24-.056-.343-.033c-.147.033-2.477 1.574-6.992 4.621-.661.454-1.26.675-1.797.664-.592-.013-1.73-.335-2.577-.61-1.038-.337-1.862-.515-1.79-1.089.037-.298.448-.603 1.232-.915z"></path></svg></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card col-xl-3 col-md-6">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {% trans "В наших магазинах" %}
+
+                </h5>
+                <p class="card-text text-secondary">
+                    {% trans "Адреса магазинов" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "Услуги" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "Наши партнёры" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "О компании" %}
+                    </p>
+                <p class="card-text text-secondary">
+                    {% trans "Хотите у нас работать?" %}
+                    </p>
+            </div>
+        </div>
+            <div class="card col-xl-3 col-md-6">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {% trans "В интернет-магазине" %}
+
+                </h5>
+                <p class="card-text text-secondary">
+                    {% trans "Доставка и оплата" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "Бонусная программа" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "Вопросы и ответы" %}
+                </p>
+                <p class="card-text text-secondary">
+                    {% trans "Обратная связь"%}
+                    </p>
+                <p class="card-text text-secondary">
+                    {% trans "Акции" %}
+                </p>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <div class="text-secondary footer-bottom ">
+            <div class="footer-bottom-left ">
+                <a href="#">
+                    © 2023, {% trans "Читай-город" %}
+                </a>
+                <a href="#">
+                    {% trans "Правила продажи" %}
+
+                </a>
+                <a href="#">
+                    {% trans "Политика конфиденциальности" %}
+                </a>
+                <div class="d-flex">
+                    <p >{% trans "Принимаем к оплате" %}</p>
+                    <a href="#"><svg width="30px" height="14px" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-bottom__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.017 2.625v.004c-.009 0-1.163-.002-1.471 1.103a1207.36 1207.36 0 01-1.103 3.894h-.221s-.817-2.864-1.103-3.898c-.31-1.107-1.471-1.103-1.471-1.103H0v8.421h2.648V6.045h.22l1.545 5.001h1.839L7.796 6.05h.22v4.997h2.648V2.625H8.017zm9.671 0s-.776.07-1.14.883l-1.875 4.118h-.221V2.625h-2.648v8.421h2.5s.813-.073 1.178-.882l1.838-4.119h.22v5.001h2.649V2.625h-2.501zm3.678 8.421V6.45h8.219a2.865 2.865 0 01-2.703 1.913h-2.869v2.684h-2.647z" fill="#707783"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M26.882 2.625h-5.888a4.23 4.23 0 004.16 3.457h4.537a2.867 2.867 0 00-2.81-3.457z" fill="#707783"></path></svg></a>
+                    <a href="#"><svg width="30px" height="14px" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-bottom__icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.386 5.696c-.017 1.339 1.193 2.085 2.104 2.53.936.455 1.25.747 1.247 1.154-.007.624-.747.9-1.44.91-1.207.019-1.91-.326-2.468-.587l-.435 2.036c.56.258 1.598.483 2.673.493 2.525 0 4.177-1.246 4.186-3.178.01-2.453-3.392-2.589-3.37-3.685.009-.332.326-.687 1.021-.777.344-.045 1.294-.08 2.37.416l.422-1.97a6.442 6.442 0 00-2.249-.413c-2.376 0-4.048 1.263-4.061 3.071zm10.37-2.901c-.46 0-.849.269-1.022.681l-3.607 8.611h2.523l.502-1.387h3.083l.291 1.387h2.224l-1.94-9.292h-2.053zm.354 2.51l.728 3.49h-1.994l1.266-3.49zm-13.783-2.51l-1.988 9.292h2.404l1.987-9.292h-2.403zm-3.556 0L6.269 9.12 5.256 3.742c-.118-.6-.587-.947-1.108-.947H.058L0 3.065c.84.182 1.794.476 2.372.79.354.192.455.36.57.817l1.918 7.415H7.4l3.895-9.292H8.771z" fill="#707783"></path></svg></a>
+                    <a href="#"><svg width="30px" height="14px" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-bottom__icon"><g clip-path="url(#clip0)" fill="#707783"><path d="M12.701 1.822H7.293v9.719h5.408V1.822z"></path><path d="M7.639 6.683a6.17 6.17 0 012.36-4.86 6.18 6.18 0 100 9.718 6.17 6.17 0 01-2.36-4.858z"></path><path d="M20 6.682a6.181 6.181 0 01-10 4.858 6.181 6.181 0 000-9.718A6.18 6.18 0 0120 6.68v.002z"></path><path d="M19.407 10.51v-.2h.081v-.04h-.204v.04h.088v.2h.035zm.397 0v-.24h-.062l-.072.171-.072-.171h-.055v.24h.045v-.18l.067.156h.046l.067-.156v.182l.036-.002z"></path></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h20v14H0z"></path></clipPath></defs></svg></a>
+                </div>
+            </div>
+
+            <div class=" btn-group footer-bottom-right ">
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% trans "Скачать приложение" %}
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+        </div>
+    </footer>
+
+<script src="https://unpkg.com/htmx.org@1.9.4"></script>
+<script src="{% static 'js/total.js' %}"></script>
+<script>
+    function cngElementsAtr(cls, atr, val){
+        var elems = document.getElementsByClassName(cls);
+        for(var i = 0; i < elems.length; i++) {
+            elems[i][atr] = val;
+        }
+    }
+    document.body.addEventListener('htmx:afterRequest', (event) => {
+        path_str = event.detail.pathInfo.requestPath;
+        if(path_str.includes('create_book')){
+            cngElementsAtr('clrtxt', 'value', '');
+        }
+    });
+</script>
+
+{% endcache %}

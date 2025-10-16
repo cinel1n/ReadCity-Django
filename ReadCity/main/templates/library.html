@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% load static %}
+
+    {% include 'includes/settings.html' %}
+    <title>Книги</title>
+
+    <link rel="stylesheet" href="{% static 'css/library.css' %}">
+
+
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' id="book-list">
+    {% include 'includes/menu.html' %}
+
+    <h1 style="margin-left:5vw; margin-top:3vw;">{{category}}</h1>
+
+    <div class="cards-sort-books Indent">
+        <div class="sort-books">
+
+            <div style="font-size:1.2vw; font-weight:400;">
+                    Название
+                    <button
+                     hx-get="/filter/{{category}}/title/descend"
+                       hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark">
+                        <i class="bi bi-arrow-up"></i>
+                    </button>
+                    <button
+                      hx-get="/filter/{{category}}/title/ascend"
+                       hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark">
+                        <i class="bi bi-arrow-down"></i>
+                    </button>
+                </div >
+
+            <div style="font-size:1.2vw; font-weight:400;">
+                    Автор
+                    <button
+                       hx-get="/filter/{{category}}/author/descend"
+                       hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark">
+                        <i class="bi bi-arrow-up"></i>
+                    </button>
+                    <button
+                       hx-get="/filter/{{category}}/author/ascend"
+                       hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark">
+                        <i class="bi bi-arrow-down"></i>
+                    </button>
+                </div >
+
+            <div style="font-size:1.2vw; font-weight:400;">
+                    Цена
+                    <button
+                       hx-get="/filter/{{category}}/price/descend"
+                        hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark">
+                        <i class="bi bi-arrow-up"></i>
+                    </button>
+                    <button
+                       hx-get="/filter/{{category}}/price/ascend"
+                       hx-target="#book-list"
+                       hx-swap="innerHTML"
+                        class="btn btn-dark" >
+                        <i class="bi bi-arrow-down"></i>
+                    </button>
+                </div >
+
+        </div>
+
+        <div class="row" >
+
+            {% for book in object_list %}
+            <div class="card col col-xl-2 col-lg-4 col-md-6 col-12 book-card" id="book-{{book.id_book}}">
+            {% include 'includes/books.html' %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+    {% include 'includes/pagination.html' %}
+
+    {% include 'includes/footer.html' %}
+
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+
+        <script>
+            function cngElementsAtr(cls, atr, val){
+                var elems = document.getElementsByClassName(cls);
+                for(var i = 0; i < elems.length; i++) {
+                    elems[i][atr] = val;
+                }
+            }
+            document.body.addEventListener('htmx:afterRequest', (event) => {
+                path_str = event.detail.pathInfo.requestPath;
+                if(path_str.includes('create_book')){
+                    cngElementsAtr('clrtxt', 'value', '');
+                }
+            });
+    </script>
+</body>

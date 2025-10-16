@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+
+    {% include 'includes/settings.html' %}
+    <title>{% trans "Создание карточки товара" %} </title>
+   <link rel="stylesheet" href="{% static 'css/create_entry.css' %}">
+    <script src="{% static 'js/create_entry.js' %}"></script>
+
+</head>
+<body>
+    {% include 'includes/menu.html' %}
+    {% if user.seller %}
+    <form enctype="multipart/form-data" class="Indent form-create-entry" method="post" >
+        {% csrf_token %}
+
+
+        <div>
+        {% for field in form %}
+
+<!--        Остаток деление на 5-->
+        {% if forloop.counter|divisibleby:5 != 0 %}
+        </div>
+        <div>
+        {% endif %}
+
+        <div class="field-form">
+            <label for="{{field.name}}" class="form-label">{{ field.label }}</label>
+            <p style="color:#8B0000;">{{field.errors}}</p>
+            {{field}}
+        </div>
+
+        {% endfor %}
+        <input value="Сохранить" type="submit" class="btn btn-save field-form">
+
+        </div>
+
+    </form>
+    {% else%}
+    <h1 class="Indent" style="margin: 7vw 0 ;"> Вы не являетесь продавцом </h1>
+    {% endif %}
+    {% include 'includes/footer.html' %}
+</body>

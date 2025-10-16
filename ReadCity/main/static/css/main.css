@@ -1,0 +1,91 @@
+
+
+.books-container{
+    margin-top:5vw;}
+
+.h-books{
+    margin-left:5%;
+    margin-top:2vw;
+    margin-bottom:2vw;}
+
+/* Реклама */
+.img-rec, .d-block{
+    object-fit: cover;
+
+}
+.img-card{
+    width: 6.25vw;;
+}
+
+.card-rec{
+    display:flex;
+    flex-direction: row;
+    padding:1vw;
+    margin: 1vw;
+}
+
+.rec-header{
+    margin-top:1vw;}
+.cards{
+    padding-left:0.5vw;
+    padding-right:0.5vw;
+    justify-content:space-between;}
+.car-card{
+    display:flex;
+    justify-content:space-between;}
+.other{
+    width:90%;
+    margin:auto;}
+.other-cards{
+    display:flex;
+    margin-bottom:7vw;
+    justify-content:space-between;}
+
+.other-cards .card{
+    border:0;}
+.h-other{
+    margin-bottom:3vw;
+    margin-top:5vw;}
+.a-image-book{
+    height:20vw;}
+
+/* Адаптация*/
+@media screen and (max-width:1200px){
+    .rec, .img-rec{
+        margin:auto;
+        width: 100%;
+        height:100%;
+        }
+    .card-rec{
+        padding:0;
+        width:30%;
+        justify-content:center;}
+
+    .card-rec .card-body{
+        padding:10%;}
+    .cards{
+        margin-top:1vw;
+        }
+
+    .card-rec .card-title{
+        font-size:3vw;
+    }
+    .card-rec .card-text{
+        font-size:2vw;
+    }
+}
+
+@media screen and (max-width:768px){
+    .img-card{
+        width:0vw;}
+    .card-rec{
+    flex-direction:column;}}
+
+@media screen and (min-width:1200px){
+    .rec, .img-rec{
+        margin:auto;
+        width: 55vw;
+        height:25vw;
+        }
+
+}

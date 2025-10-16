@@ -1,0 +1,400 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-25 21:17+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\main\forms.py:19 .\main\templates\book.html:150
+msgid "Название"
+msgstr ""
+
+#: .\main\forms.py:21
+msgid "Автор"
+msgstr ""
+
+#: .\main\forms.py:24
+msgid "Цена"
+msgstr ""
+
+#: .\main\forms.py:26
+msgid "Описание"
+msgstr ""
+
+#: .\main\forms.py:28
+msgid "Переводчик"
+msgstr ""
+
+#: .\main\forms.py:31
+msgid "Издательство"
+msgstr ""
+
+#: .\main\forms.py:33
+msgid "Издательский бренд"
+msgstr ""
+
+#: .\main\forms.py:35
+msgid "Серия"
+msgstr ""
+
+#: .\main\forms.py:39
+msgid "Количество страниц"
+msgstr ""
+
+#: .\main\forms.py:41
+msgid "Размер"
+msgstr ""
+
+#: .\main\forms.py:43
+msgid "Тип обложки"
+msgstr ""
+
+#: .\main\forms.py:45
+msgid "Тираж"
+msgstr ""
+
+#: .\main\forms.py:47
+msgid "Вес"
+msgstr ""
+
+#: .\main\forms.py:49
+msgid "Возрастные ограничения"
+msgstr ""
+
+#: .\main\forms.py:52
+msgid "Обложка"
+msgstr ""
+
+#: .\main\models.py:120
+msgid "email"
+msgstr ""
+
+#: .\main\models.py:121
+msgid "name"
+msgstr ""
+
+#: .\main\models.py:122
+msgid "surname"
+msgstr ""
+
+#: .\main\models.py:123
+msgid "registered"
+msgstr ""
+
+#: .\main\models.py:124
+msgid "is_active"
+msgstr ""
+
+#: .\main\models.py:138
+msgid "user"
+msgstr ""
+
+#: .\main\models.py:139
+msgid "users"
+msgstr ""
+
+#: .\main\templates\book.html:69
+msgid "Перейти к характеристикам"
+msgstr ""
+
+#: .\main\templates\book.html:81
+msgid "КУПИТЬ"
+msgstr ""
+
+#: .\main\templates\book.html:88
+msgid "В наличии"
+msgstr ""
+
+#: .\main\templates\book.html:93
+msgid "Другие способы доставки"
+msgstr ""
+
+#: .\main\templates\book.html:112
+msgid "ОТЗЫВЫ"
+msgstr ""
+
+#: .\main\templates\book.html:115
+msgid "НЕТ ОТЗЫВОВ"
+msgstr ""
+
+#: .\main\templates\book.html:124
+msgid "Сначала новые"
+msgstr ""
+
+#: .\main\templates\book.html:176
+msgid "ОПИСАНИЕ И ХАРАКТЕРИСТИКИ"
+msgstr ""
+
+#: .\main\templates\book.html:202
+msgid "ДРУГИЕ КНИГИ"
+msgstr ""
+
+#: .\main\templates\create_entry.html:8
+msgid "Создание карточки товара"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:7
+msgid "Книжный интернет-магазин «Читай-город»"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:11
+msgid ""
+"«Читай-город» – сеть книжных магазинов, успешно работающих в Москве и других "
+"регионах России."
+msgstr ""
+
+#: .\main\templates\includes\footer.html:14
+msgid ""
+"А ещё это – крупный интернет-магазин книг. В нём вы можете заказывать книги "
+"в любое время 24 часа в сутки."
+msgstr ""
+
+#: .\main\templates\includes\footer.html:29
+msgid "В наших магазинах"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:33
+#: .\main\templates\includes\menu.html:20
+msgid "Адреса магазинов"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:36
+msgid "Услуги"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:39
+msgid "Наши партнёры"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:42
+msgid "О компании"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:45
+msgid "Хотите у нас работать?"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:52
+msgid "В интернет-магазине"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:56
+#: .\main\templates\includes\menu.html:30
+msgid "Доставка и оплата"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:59
+#: .\main\templates\includes\menu.html:35
+msgid "Бонусная программа"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:62
+msgid "Вопросы и ответы"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:65
+#: .\main\templates\includes\menu.html:70
+msgid "Обратная связь"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:68
+msgid "Акции"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:77
+msgid "Читай-город"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:80
+msgid "Правила продажи"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:84
+msgid "Политика конфиденциальности"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:87
+msgid "Принимаем к оплате"
+msgstr ""
+
+#: .\main\templates\includes\footer.html:96
+msgid "Скачать приложение"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:13
+msgid "Россия, Калининград"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:25
+msgid "Для разработчиков"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:46
+msgid "Партнёрская программа"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:67
+msgid "круглосуточно"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:81
+#: .\main\templates\includes\menu.html:167
+msgid "Заказы"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:93
+msgid "Корзина"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:127
+msgid "Каталог"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:135
+msgid "Показать всё"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:144
+msgid "Что будем искать?"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:159
+msgid "Войти"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:174
+msgid "Закладки"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:195
+msgid "Акция"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:196
+msgid "Распродажа"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:197
+msgid "Читай школа"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:199
+msgid "Комиксы и Манга"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:203
+msgid "Подборки"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:206
+msgid "Читай журнал"
+msgstr ""
+
+#: .\main\templates\includes\menu.html:209
+msgid "Книжные циклы"
+msgstr ""
+
+#: .\main\templates\main.html:8
+msgid "Читай-город  — интернет-магазин книг"
+msgstr ""
+
+#: .\main\templates\main.html:47
+msgid "Предыдущий"
+msgstr ""
+
+#: .\main\templates\main.html:51
+msgid "Следующий"
+msgstr ""
+
+#: .\main\templates\main.html:57
+msgid "Устроим обнима-а-а-шки?"
+msgstr ""
+
+#: .\main\templates\main.html:58
+msgid "С помощью заботливых книг"
+msgstr ""
+
+#: .\main\templates\main.html:66
+msgid "Как сейчас выглядит Виктор Пелевин"
+msgstr ""
+
+#: .\main\templates\main.html:68
+msgid "Версии нейросети"
+msgstr ""
+
+#: .\main\templates\main.html:75
+msgid "Эксклюзивно в «Читай-городе»"
+msgstr ""
+
+#: .\main\templates\main.html:78
+msgid "Невозможно пропустить!"
+msgstr ""
+
+#: .\main\templates\main.html:88
+msgid "НОВИНКИ ЛИТЕРАТУРЫ"
+msgstr ""
+
+#: .\main\templates\main.html:113 .\main\templates\main.html:147
+msgid "Купить"
+msgstr ""
+
+#: .\main\templates\main.html:124
+msgid "НЕДАВНО ПРОСМОТРЕННЫЕ"
+msgstr ""
+
+#: .\main\templates\main.html:162
+msgid "ЧИТАЙ-ЖУРНАЛ"
+msgstr ""
+
+#: .\main\templates\main.html:169
+msgid "Музыка нас связала: 8 книг, где главные герои занимаются музыкой"
+msgstr ""
+
+#: .\main\templates\main.html:173
+msgid "Рок-группы, трубадуры и дирижёры"
+msgstr ""
+
+#: .\main\templates\main.html:185
+msgid ""
+"Ворчливая лягушка и семья йети: 6 приключенческих комиксов, достойных "
+"экранизации"
+msgstr ""
+
+#: .\main\templates\main.html:189
+msgid "Новые «Рик и Морти» и «Время приключений»?"
+msgstr ""
+
+#: .\main\templates\main.html:201
+msgid "Девушка-трудоголик и парень-домработница: о чём манхва «Её слуга»"
+msgstr ""
+
+#: .\main\templates\main.html:205
+msgid "Очень медленный слоубёрн из Кореи"
+msgstr ""
+
+#: .\main\views.py:294
+msgid " товар"
+msgstr ""
+
+#: .\main\views.py:296
+msgid " товара"
+msgstr ""
+
+#: .\main\views.py:298
+msgid " товаров"
+msgstr ""

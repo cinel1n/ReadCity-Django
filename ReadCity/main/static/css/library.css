@@ -1,0 +1,46 @@
+.pog{
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+.sort-books .btn{
+    padding:0.1vw;
+    color:white;
+    background-color: #26a9e0;
+    border:0;
+    height:2vw;
+    width:2vw;
+}
+.sort-books{
+    display:flex;
+    justify-content:space-between;
+    width:35%;
+    }
+.cards-sort-books{
+margin-top:1vw}
+
+.a-page{
+    font-size:1vw;
+    height:2vw;
+    width:2vw;
+    border-radius:3px;
+    display:flex;
+    justify-content:center;
+    margin-left:5px;
+    text-align:center;
+
+    }
+.pog a span{
+    display:flex;
+    align-items:center;
+}
+.a-page:hover{
+    background-color:#ecf4fe;
+    color:rgb(44, 126, 220);
+    }
+
+.pag-act{
+    background-color:rgb(38, 169, 224);
+    color:white;
+    }

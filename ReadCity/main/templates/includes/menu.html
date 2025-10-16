@@ -1,0 +1,200 @@
+{% load cache %}
+
+{% load i18n %}
+{% cache 10 start_menu LANGUAGE_CODE %}
+<nav class="d-xl-block navbar navbar-expand-xl header-top-bar Indent " >
+    <div class="container-fluid">
+        <button class="navbar-toggler button-nav-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <i  class="bi bi-justify " style="color:white; border:0;" ></i>
+        </button>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-between">
+            <ul class="navbar-nav ">
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link text-light " aria-current="page" href="#">
+                        <i class="bi bi-airplane"></i>
+                        {% trans "Россия, Калининград" %}
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light " href="#">
+                        {% trans "Адреса магазинов" %}
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light " href="{% url 'api' %}">
+                        {% trans "Для разработчиков" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'create_entry' %}">
+                        {% trans "Добавить товар" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">
+                        {% trans "Бонусная программа" as bonus_program %}
+                        </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">
+                        {{bonus_program}}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'my_products' %}">
+                        {% trans "Мои товары" %}
+                    </a>
+                </li>
+                {% endcache %}
+                <li>
+                    {% get_current_language as LANGUAGE_CODE %}
+
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <div style="display:flex;">
+                        {% for language in languages %}
+                            {% if language.code == LANGUAGE_CODE %}
+                                <p class="text-light" style="text-decoration:underline;">{{ language.name_local }}</p>
+                            {% else %}
+                                <a href="/{{ language.code }}/" class="nav-link text-light">{{ language.name_local }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </li>
+
+
+            </ul>
+
+            <ul class=" navbar-nav  ">
+                <li class="nav-item">
+                    <a class="nav-link text-light " href="#">8 (800) 444-8-444 — {% trans "круглосуточно" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">{% trans "Обратная связь" %}</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand  Indent nav-2 ">
+    <a class="navbar-brand" href="/{{LANGUAGE_CODE}}/">
+        <svg width="85" height="24" viewBox="0 0 85 24" xmlns="http://www.w3.org/2000/svg" class="ic-nav ">
+            <path d="M31.488 2.402l3.087 20.004 2.776-.009-3.074-19.989-2.789-.006z"></path>
+            <path d="M31.359 2.402h-4.726v19.939h4.726V2.402z"></path>
+            <path d="M17.372 2.402H0v19.939h15.64l1.732-19.939z"></path>
+            <path d="M19.828 22.34h5.277l.02-19.938h-3.567l-1.73 19.939z"></path>
+            <path d="M47.457 11.631H45.82V7.852c-.657.43-1.432.65-2.22.634-1.41 0-2.83-.75-2.83-2.944v-3.11h1.633v2.655c0 1.472.719 1.891 1.636 1.891a3.19 3.19 0 001.781-.594V2.432h1.637v9.2z"></path>
+            <path d="M49.234 11.631V2.432h1.637v6.544l4.88-6.544h1.434v9.2h-1.633V5.098l-4.88 6.532h-1.438z"></path>
+            <path d="M58.61 2.432h7.67v1.51h-3.017v7.69h-1.636v-7.69h-3.018v-1.51z"></path>
+            <path d="M68.814 2.405h1.438l3.934 9.217h-1.741l-.972-2.352h-3.974l-.972 2.352H64.88l3.935-9.217zm-.69 5.352h2.726l-1.356-3.27-1.37 3.27z"></path>
+            <path d="M75.18 11.631V2.432h1.633v6.544l4.88-6.544h1.437v9.2h-1.636V5.098l-4.88 6.532H75.18z"></path>
+            <path d="M40.703 13.16h5.252v1.51h-3.618v7.686h-1.634V13.16z"></path>
+            <path d="M81.71 0H76.94v1.52h3.661L81.71 0z"></path>
+            <path d="M51.246 13.014c2.765 0 4.853 1.879 4.853 4.757 0 2.76-2.088 4.757-4.852 4.757-2.765 0-4.84-1.876-4.84-4.757 0-2.676 1.982-4.757 4.84-4.757zm0 7.974c1.953 0 3.123-1.418 3.123-3.232 0-1.906-1.369-3.232-3.123-3.232-1.753 0-3.11 1.326-3.11 3.232 0 1.844 1.369 3.232 3.11 3.232z"></path>
+            <path d="M57.594 22.356V13.16c.517 0 1.991-.03 2.644-.03 2.737 0 3.61 1.448 3.61 2.973 0 1.564-1.182 2.973-3.405 2.973-.28 0-.81 0-1.204-.038v3.324l-1.645-.006zm1.633-7.686v2.825c.388.038.785.065 1.158.065.969 0 1.727-.46 1.727-1.487 0-.957-.602-1.43-1.715-1.43-.33 0-.73 0-1.17.027z"></path>
+            <path d="M69.805 13.014c2.765 0 4.852 1.879 4.852 4.757 0 2.76-2.087 4.757-4.852 4.757s-4.84-1.876-4.84-4.757c0-2.676 1.982-4.757 4.84-4.757zm0 7.974c1.952 0 3.123-1.418 3.123-3.232 0-1.906-1.37-3.232-3.123-3.232-1.754 0-3.113 1.326-3.113 3.232 0 1.844 1.371 3.232 3.113 3.232z"></path>
+            <path d="M74.8 20.845h1.267c1.068-4.578 1.712-7.688 1.712-7.688h5.318v7.688h1.273V24h-1.528v-1.644h-6.51V24h-1.531v-3.155zm2.898 0h3.778V14.67h-2.46s-.581 2.973-1.318 6.175z"></path>
+        </svg>
+    </a>
+    <div class="collapse navbar-collapse d-flex justify-content-around">
+        <div class="dropdown">
+            <a class="btn button-nav  dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-journal"></i> {% trans "Каталог" %}
+            </a>
+
+            <ul class="dropdown-menu">
+                {% for key, value in cat.items  %}
+
+                <li><a class="dropdown-item" href="{% url 'library' value %}">{{ key }}</a></li>
+                {% endfor %}
+                <li><a class="dropdown-item" href="{% url 'library' 'all' %}">
+                    {% trans "Показать всё" %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <form class="search-nav d-flex" method="get" action="{% url 'search' %}">
+            <input name="s" class="form-control" type="text" placeholder='{% trans "Что будем искать?" %}' aria-label="Поиск">
+            <button type="submit" class="btn"><i class="bi bi-search"></i></button>
+        </form>
+
+        {% cache 10 auth_user request.user.email LANGUAGE_CODE %}
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                {% if request.user.is_authenticated %}
+                <a class="nav-link link-nav-a user-name" href="/logout">
+                    <i class="bi bi-person-circle"></i>
+                    <p>{{ request.user|truncatechars:15 }}</p>
+                </a>
+                {% else %}
+                <a class="nav-link link-nav-a" href="/login">
+                    <i class="bi bi-person-circle"></i>
+                    <p>
+                        {% trans "Войти" %}</p>
+                </a>
+                {% endif %}
+            </li>
+            {% if not request.user.is_anonymous %}
+            <li class="nav-item ">
+                <a class="nav-link link-nav-a" href="#">
+                    <i class="bi bi-box"></i>
+                    <p>{% trans "Заказы" %}</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-nav-a  position-relative" href="/bookmarks">
+                    <i class="bi bi-bookmarks"></i>
+                    <p>
+                        {% trans "Закладки" %}
+                    </p>
+                </a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-nav-a" href="{% url 'basket' %}">
+                    <i class="bi bi-cart-fill"></i>
+                    <p>Корзина</p>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endcache %}
+
+
+    </div>
+</nav>
+{% cache 10 end_menu LANGUAGE_CODE %}
+
+<div class="container-fluid Indent nav-3" >
+    <div class="row collapse navbar-collapse d-flex justify-content-between" >
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">{% trans "Акция" %}</div>
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">{% trans "Распродажа" %}</div>
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">{% trans "Читай школа"%}</div>
+        <div style="background-color:black; font-weight:700;" class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">
+            {% trans "Комиксы и Манга" %}
+
+        </div>
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">
+            {% trans "Подборки" %}
+            </div>
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">
+            {% trans "Читай журнал" %}
+            </div>
+        <div class="col-xl-1 col-lg-3 col-md-3 col-sm-3 col-6">
+            {% trans "Книжные циклы" %}
+            </div>
+
+    </div>
+</div>
+{% endcache %}

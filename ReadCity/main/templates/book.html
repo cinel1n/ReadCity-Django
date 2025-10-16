@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>{{book.title}}</title>
+    {% load static %}
+    {% load i18n %}
+    {% load cache %}
+    {% include 'includes/settings.html' %}
+    <link rel="stylesheet" href="{% static 'css/book.css' %}">
+
+</head>
+
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    {% include 'includes/menu.html' %}
+
+    {% cache 600 book_page book.id_book LANGUAGE_CODE %}
+    <div class="Indent" style="margin:4vw 0;" id="book-{{book.id_book}}">
+        <div class="den">
+            <h4 >{{book.title}}</h4>
+            <a class="link" >{{book.author}}</a>
+        </div>
+
+        <div class="ratings-reviews">
+             <p class="text-secondary">
+                 (0 оценок)</p>
+             <a class="link">Оценить</a>
+             <a class="link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="product-detail-review__icon link"><path d="M7 9a1 1 0 001 1h8a1 1 0 100-2H8a1 1 0 00-1 1zm1 5a1 1 0 110-2h8a1 1 0 110 2H8z"></path><path d="M18 3a3 3 0 013 3v10a3 3 0 01-3 3H8.472a1 1 0 00-.447.106l-3.578 1.788A1 1 0 013 20V6a3 3 0 013-3h12zm1 3a1 1 0 00-1-1H6a1 1 0 00-1 1v12.382l2.13-1.065A3 3 0 018.473 17H18a1 1 0 001-1V6z"></path></svg>
+                Оставить отзыв
+            </a>
+
+        </div>
+
+        <div class="row slide-one">
+            <div class="imgs col-sm-3 col-12">
+                {% if book.img == "" %}
+                    <img src={{book.img_local.url}} class="card-img-top image-book">
+                {% else %}
+                <img class="basic-img col-12" src={{book.img}}>
+                {% endif %}
+
+                <a href="#" class="link d-flex justify-content-center" style="margin-top:1vw; font-size:16px">
+                    <svg style="margin:auto 0" width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg" alt="glass" class="product-detail-cover__icon "><path d="M6 9a4 4 0 100-8 4 4 0 000 8z" stroke="#26A9E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18 9a4 4 0 100-8 4 4 0 000 8z" stroke="#26A9E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 3.5v0a4.472 4.472 0 014 0v0" stroke="#26A9E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1 3.467l1.126.65" stroke="#26A9E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M23 3.467l-1.126.65" stroke="#26A9E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Читать отрывок</a>
+            </div>
+
+            <div class="basic-info col col-5">
+
+                <p class="info-book">
+                    {{book.info_txt|truncatechars:200}}
+                </p>
+
+                <div class="go-to-description ">
+                    <a href="" class="link">Перейти к описанию</a>
+                    <a href='' class="link">Читать отрывок</a>
+                </div>
+
+                <div class="properties">
+                    {% for key, value in property_book1.items %}
+                    {% if value != "" %}
+                    <div class="property">
+                        <p class="left-property">{{key}}</p>
+                        <p class="right-property">{{value}}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+
+                <a class='link go-to-description' href="#">
+                    {% trans "Перейти к характеристикам" %}
+                    </a>
+
+            </div>
+
+
+            <div class="col col-3" style="padding:0; ">
+                <div class='purchase-div'>
+                    <p class="price-p">{{book.price}} Р</p>
+                    {% endcache %}
+                    <div class="buttons row" style="--bs-gutter-x: 0;">
+                        {% include 'includes/basket_buttons.html' %}
+                    </div>
+
+                    {% cache 600 book_end book.id_book LANGUAGE_CODE%}
+                    <p class="availability">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        {% trans "В наличии" %}
+                         </p>
+
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans "Другие способы доставки" %}
+
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"></a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                        </ul>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="reviews">
+            <div class="table-contents-notes">
+                {% if reviews|length != 0 %}
+                    <h2> {% trans "ОТЗЫВЫ" %}  {{reviews|length}}</h2>
+                {% else %}
+                    <h2>
+                        {% trans "НЕТ ОТЗЫВОВ" %}
+                    </h2>
+                {% endif %}
+                <button class="btn btn-reviews"> Оставить отзыв</button>
+            </div>
+
+            <div class="dropdown">
+                {% if reviews|length != 0 %}
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {% trans "Сначала новые" %}
+
+                </button>
+                {% endif %}
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Сначала старые</a></li>
+                  <li><a class="dropdown-item" href="#">Сначала полезные</a></li>
+                  <li><a class="dropdown-item" href="#">Сначала новые</a></li>
+                </ul>
+              </div>
+
+
+            <div class="card card-review" >
+
+                {% for review in reviews %}
+                <div class="card-body card-review" style="background-color: rgb(237, 255, 236);">
+
+                    <div class="d-flex justify-content-between">
+
+                        <h6 class="card-subtitle mb-2 text-muted">{{review.user_name}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{date}}</h6>
+                    </div>
+
+
+
+                    <h3 class="card-title">
+                        {% trans "Название" %}
+
+                    </h3>
+                    <p class="card-text">{{review.comment}}</p>
+
+                    <div class="user-ratings-div">
+                        <div class="user-rating">
+                            <a href="#" class="card-link"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+                            <p></p>
+                        </div>
+                        <div class="user-rating">
+                            <a href="#" class="card-link"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+
+        </div>
+
+        <div class="specifications">
+            <h1>
+                {% trans "ОПИСАНИЕ И ХАРАКТЕРИСТИКИ" %}
+            </h1>
+            <p class="description-p">
+                {{book.info_txt}}
+            </p>
+
+
+            <div class="sp-properties">
+                {% for property_book in property_book2 %}
+                {% for key, value in property_book.items %}
+                {% if value != "" %}
+                <div class="property">
+                    <p class="left-property">{{key}}</p>
+                    <p class="right-property">{{value}}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+    {% endcache %}
+
+    <div class="books-container container-fluid" >
+        <h1 class="h-books" style="padding-left:5vw;">
+            {% trans "ПОХОЖИЕ" %}
+
+        </h1>
+
+
+        <div class="row books-cards">
+            {% for book in object_list %}
+            <div id="book-{{book.id_book}}" class="card col col-xl-2 col-lg-4 col-md-6 col-12 book-card" >
+                {% include 'includes/books.html' %}
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+
+
+{% include 'includes/footer.html' %}
+
+</body>
+</html>
+

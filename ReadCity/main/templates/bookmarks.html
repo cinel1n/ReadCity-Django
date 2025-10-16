@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    {% include 'includes/settings.html' %}
+    <title>Закладки</title>
+    <link rel="stylesheet" href="{% static 'css/bookmarks.css' %}">
+
+
+</head>
+
+<body  id="main-book" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' >
+    {% include 'includes/menu.html' %}
+    <div class="d-flex Indent" style="margin-top: 3.5vw;">
+        <div class="menu-bookmarks-div">
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                Профиль
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                Личные данные
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="bi bi-box"></i>
+                Заказы
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+                Бронирование
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                Сертификаты
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                Бонусная карта
+            </a>
+            <a href="#" class="menu-bookmarks-a">
+                <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                Закладки
+            </a>
+
+        </div>
+
+        <div class="bookmarks-products" >
+            <div class="bookmarks-header">
+
+                <div class="d-flex">
+                    <h1>Закладки</h1>
+                    <span>{{num_books}}</span>
+                </div>
+
+
+
+                <button type="submit"
+                style="padding:5px"
+                class=" btn btn-danger"
+                hx-target="#book"
+                hx-swap="outerHTML"
+                hx-post="{% url 'delete_all_bookmarks' %}"
+                >Удалить всё</button>
+
+
+
+            </div>
+
+            <div class="bookmarks-header-2">
+
+                <a href="#" class="active-a"> Избранные</a>
+                <a class="not-active-a" href="#"> В подписке </a>
+            </div>
+
+            <div class="books-container container-fluid">
+
+                <div class="row books-cards" id="book">
+                    {% for book in bookmarks %}
+                    <div class="card col col-xl-3 col-lg-4 col-md-6 col-12 book-card" id="book-{{book.id_book}}">
+                        {% include 'includes/books.html' %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        
+            </div>
+
+        </div>
+
+    </div>
+
+    {% include 'includes/footer.html' %}
+    
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+
+.other-imgs{
+    margin-top: 1vw;
+}
+
+.link{
+    color:rgb(38, 169, 224)
+}
+.tag{
+    font-weight: 500;
+    padding:0.5vw;
+
+    border-radius:10px;
+}
+.ratings-reviews{
+    width:35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:1vw;
+    margin-bottom: 2vw;
+}
+
+.property{
+    display: flex;
+    margin: 0.5vw 0;
+}
+
+
+.right-property{
+    font-weight: 500;
+    width:50%;
+}
+.left-property{
+    width:50%;
+}
+
+.go-to-description{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3vw 0;
+}
+
+.price-p{
+
+    color:red;
+    font-size: 2vw;
+    
+}
+.btn{
+    color:aliceblue;
+}
+.btn-left{
+    width: 17vw;
+    height: 3vw;
+}
+.btn-right{
+    width: 3vw;
+    height: 3vw;
+    font-size: 2vw;
+
+
+}
+
+.slide-one{
+    justify-content: space-between;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.availability{
+    
+    color:#37ceb4;
+}
+
+.slide-one .dropdown .btn{
+    background-color:white;
+    color:#26a9e0;
+    
+}
+
+.purchase-div{
+    border:2px solid #E1E1E1;
+    border-radius:5px ;
+    padding: 1vw;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.btn-reviews{
+    height: 2.5vw;
+    font-weight: 500;
+    width: 10vw;
+}
+
+.reviews{
+    width: 70%;
+    margin-top: 5vw;
+}
+.table-contents-notes{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.table-contents-notes{
+    font-size: 2.5vw;
+}
+
+
+.reviews .dropdown button{
+    width: 10vw;
+    height: 2.5vw;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border:2px solid #E1E1E1;
+    margin-top: 2vw;
+}
+
+.card-review{
+    margin-top:1vw;
+}
+
+.card-review {
+    border:0;
+    border-radius: 5px;
+}
+
+.user-rating{
+    display: flex;
+    width: 2.5vw;
+    justify-content: space-between;
+    margin-left: 2vw;
+
+}
+
+
+.user-ratings-div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.specifications{
+    margin-top: 4vw;
+    width: 70%;
+}
+
+.sp-properties{
+    width: 30vw;
+    margin-top: 1vw;
+}
+
+

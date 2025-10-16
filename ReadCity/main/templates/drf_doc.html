@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+
+    {% include 'includes/settings.html' %}
+    <title>Документация API</title>
+    <link rel="stylesheet" href="{% static 'css/drf_doc.css' %}">
+
+
+</head>
+<body >
+    {% include 'includes/menu.html' %}
+    <h1 class="Indent" style="margin-top:3vw;">Документация по API</h1>
+    <div class="div-api-description Indent">
+        <h2>Чтение данных</h2>
+        <p>Наш сайт предоставляет открытый доступ для получения всех данных по товарам, для этого воспользуйтесь адресом:</p>
+        <ul>
+            <li><code>api/v1/book_list/</code></li>
+        </ul>
+        
+        <p>Фильтрация данных доступна по категориям, для этого к адресу добавьте параметр "category" и его slugify:</p>
+        
+        <ul>
+            <li><code>api/v1/book_list/category/iskusstvo</code></li>
+        </ul>
+        <p>Для того, чтобы взять отдельную запись, необходимо добавить параметр ID товара, который вы хотите получить:</p>
+        <ul>
+            <li><code>api/v1/book_list/id/2725692</code></li>
+        </ul>
+    </div>
+    
+    <div class="div-api-description Indent">
+        <h2>Авторизация</h2>
+        <p>Для аутификации отправьте POST запарос с такими параметрами Emal и Password, воспользовавшись адресом <span class="span-important">/auth/token/login/</span> <br>После успешной авторизации вам будет предоставлен токен, который в дальнейшем нужно будет указывать в заголовке<br> Для этого укажите ключ: <span class="span-important">Authorization</span> и значение: <span class="span-important"> Token *ваш токен*</span> </p>
+        <img style="margin-top: 1vw; width: 60vw ;" src="{% static 'img/tok.jpg' %}" class="img-api">
+    </div>
+
+    <div class="div-api-description Indent">
+        <h2>Управление данными</h2>
+        <p>Для удаления или редактирования данных необходимо обладать провами администартора или быть их создателем  <br> Если вы обладаете такими правами, пройдите авторизацию, после чего вам будут доступные следующие адреса:</p>
+        <ul>
+        <li><p><span class="span-important">api/v1/book_destroy/*id*</span> - удаление записи</p></li>
+        <li><p><span class="span-important">api/v1/book_update/*id*</span> - обновление записи</p></li>
+        <li><p><span class="span-important">api/v1/book_create/</span> - создание записи</p></li>
+        </ul>
+        <p>Как вы могли заметить, обращаться к записи можно только по ее id </p>
+    </div>
+
+
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>

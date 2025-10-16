@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    {% load static %}
+
+    {% include 'includes/settings.html' %}
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+
+</head>
+
+<body>
+    {% include 'includes/menu.html' %}
+
+
+    <form class="form-login" method="post" >
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <div class="form-label alert alert-danger">
+
+                {% for i in form.non_field_errors  %}
+                    {{ i }}
+                {% endfor %}
+
+        </div>
+        {% endif %}
+
+        {% for field in form %}
+
+
+        <div class="mb-3">
+
+            <label for={{field.name}} class="form-label">{{field.label}}</label>
+            {{field}}
+
+        </div>
+        {% endfor %}
+        <div class="btns-login">
+            <input value="ВОЙТИ" type="submit" class="btn btn-login btn-primary">
+            <a href="/registration" class="reg-btn" style=""> Зарегистрироваться </a>
+        </div>
+    </form>
+    {% include 'includes/footer.html' %}
+
+</body>

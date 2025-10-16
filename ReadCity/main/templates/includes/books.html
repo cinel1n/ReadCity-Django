@@ -1,0 +1,51 @@
+
+                <a href="{% url 'book' book.id_book %}"  class="a-image-book">
+                    {% if book.img == "" %}
+                        <img src={{book.img_local.url}} class="card-img-top image-book">
+                    {% else %}
+                        <img src={{book.img}} class="card-img-top image-book">
+                    {% endif %}
+
+                </a>
+
+                <div class="card-body" id="card-{{book.id_book}}">
+
+                    <div style="height:12vw">
+                        <h5 class="card-title text-danger">{{book.price}} ₽</h5>
+                        <a class="card-subtitle mb-2 name-book-a" href="{% url 'book' book.id_book %}" >{{book.title|truncatechars:50}}</a>
+                        <a class="cart-text text-secondary author-book-a" href="{% url 'search' %}?s={{book.author}}">{{book.author}}</a>
+                    </div>
+                    {% load i18n %}
+                    <div class="d-flex justify-content-between" id="btns">
+
+                        {% if book in basket_books %}
+                        <button type="submit" hx-swap='beforeend' hx-target="#book-{{book.id_book}}"
+                                hx-post="{% url 'basket_delete' book.id_book %}" class=" card-link btn-click btn  button-basket button-fav-basket">{% trans "Купить" %}</button>
+                        {% else %}
+
+                        <button type="submit" hx-target="#book-{{book.id_book}}"
+                                hx-swap="beforeend"
+                                hx-post="{% url 'basket_add' book.id_book %}" class="card-link btn-click btn  button-basket button-fav-no-basket">{% trans "Купить" %}</i></button>
+                        {% endif %}
+
+
+
+
+                        {% if book in bookmarks %}
+                        <button type="submit" hx-target="#book-{{book.id_book}}"
+                                {% if delete_book %}
+                                hx-swap="outerHTML"
+                                {%  else %}
+                                hx-swap="beforeend"
+                                {% endif %}
+                                hx-post="{% url 'delete_bookmark' book.id_book %}" class="card-link btn-click btn button-fav button-fav-bookmarks"><i class="bi bi-bookmarks"></i></button>
+                        {% else %}
+
+                        <button type="submit" hx-target="#book-{{book.id_book}}"
+                                hx-target="#book-{{book.id_book}}"
+                                hx-swap="beforeend"
+                                hx-post="{% url 'add_bookmark' book.id_book %}" class="card-link btn-click btn button-fav button-fav-no-bookmarks"><i class="bi bi-bookmarks"></i></button>
+                        {% endif %}
+                    </div>
+
+                </div>

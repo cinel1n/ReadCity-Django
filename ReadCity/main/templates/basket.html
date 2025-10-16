@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+
+    <title>Корзина</title>
+    {% load static %}
+
+    {% include 'includes/settings.html' %}
+    <link rel="stylesheet" href="{% static 'css/basket.css' %}">
+
+
+</head>
+<body >
+
+    {% include 'includes/menu.html' %}
+
+    <div style="margin-top:2vw" class="row content-basket Indent" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+        <div class="col-8">
+            <div class="bookmarks-header ">
+
+                <div class="d-flex">
+                    <h1>КОРЗИНА</h1>
+                </div>
+
+
+
+        
+            </div>
+            
+
+            
+            <div>
+                <h5 class="h-books">
+                    Товары в наличии
+                </h5>
+
+                {% for book in basket_books %}
+                <div class="books-basket" id="book-{{book.id_book}}">
+                    <div class="book-info-basket">
+                        <div class="book-info-basket-left">
+                            <a href="{% url 'book' book.id_book %}" class="img-basket-a">
+                                {% if book.img == "" %}
+                                    <img src={{book.img_local.url}}>
+                                {% else %}
+                                    <img src={{book.img}}>
+                                {% endif %}
+                            </a>
+
+                            <div style="margin-left: 1vw;">
+                                <a href="{% url 'book' book.id_book %}">{{book.title}}</a>
+                                <a href="{% url 'search' %}?s={{book.author}}">{{book.author}}</a>
+                            </div>
+                        </div>
+
+                        <div class="book-info-basket-right">
+                            <h5 class="text-danger">{{book.price}} ₽</h5>
+
+                            <div class="buttons-basket">
+                                <button type="submit"
+                                        {% if book in bookmarks %}
+                                        hx-swap="outerHTML"
+                                        hx-post="{% url 'delete_bookmark' book.id_book %}"
+                                        {% else %}
+
+                                        hx-target="#book-{{book.id_book}}"
+                                        hx-swap="beforeend"
+                                        hx-post="{% url 'add_bookmark' book.id_book %}"
+                                        {% endif %}
+                                        class="card-link btn btn-primary button-fav"><i style="margin:auto"
+                                                                                        class="bi bi-bookmarks"></i>
+                                </button>
+
+
+                                <button
+                                        hx-target="#book-{{book.id_book}}"
+                                        hx-swap="outerHTML"
+                                        hx-post="{% url 'basket_delete' book.id_book %}"
+                                        class="card-link btn btn-primary button-fav">
+                                    <i style="margin:auto" class="fa fa-trash-o" aria-hidden="true"></i>
+
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                {% endfor %}
+
+        
+        
+            </div>
+
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+    {% include 'includes/footer.html' %}
+</body>
+</html>

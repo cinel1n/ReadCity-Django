@@ -1,0 +1,94 @@
+
+
+.menu-bookmarks-a{
+    margin: 1vw 1vw;
+    font-size:1.8vw;
+    transition: color .1s linear;
+}
+.img-basket-a{
+    height:10vw;
+    width:10vw;}
+.img-basket-a img{
+    height:10vw;
+
+    }
+.book-info-basket-left h6{
+    width:60%;}
+.menu-bookmarks-a:hover{
+    color:rgb(29, 150, 201);
+    transition: color .1s linear;
+
+}
+
+
+.bookmarks-header{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 2.5rem;
+    
+}
+
+.bookmarks-header a, .bookmarks-header span, .bookmarks-header h1 {
+    display: flex; align-items: center;
+}
+.bookmarks-header a{
+    color:rgb(38, 169, 224)
+}
+.bookmarks-header span{
+    margin-left: 1vw;
+    color:rgb(112, 119, 131)
+}
+
+
+.book-info-basket-left{
+    display: flex;
+    
+}
+
+.button-basket{
+    width: 5vw;
+
+}
+
+
+.book-info-basket span{
+    color:rgb(112, 119, 131);
+}
+
+.book-info-basket{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-basket{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-top: 5vw;
+
+}
+
+.buttons-basket button{
+    background-color:rgb(38, 169, 224)
+    width: 35px;
+    height: 35px;
+    display: flex;
+
+}
+.buttons-basket button: hover{
+    background-color:white;
+}
+
+.books-basket{
+    margin-bottom: 1.5vw;
+    margin-top: 1.5vw;
+}
+
+h5{
+    align-items: flex-end;
+    display: flex;
+
+}
+
